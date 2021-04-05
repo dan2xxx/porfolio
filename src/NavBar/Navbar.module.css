@@ -1,0 +1,10 @@
+.menuLinks {
+    text-decoration: none;
+    color: white;
+}
+
+.adminPanel {
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 10px;
+    
+}
