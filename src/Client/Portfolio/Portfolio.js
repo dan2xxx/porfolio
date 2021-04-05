@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { Context } from './../../index'
 import style from './Portfolio.module.css'
 import Loader from './../../Loader/Loader'
@@ -13,50 +13,47 @@ const Portfolio = () => {
 
     useEffect(() => {
         console.log('useEffect')
-        setInit(false)
         getPhoto()
+
     }, [])
 
     const getPhoto = () => {
 
-        
+        let listOfUrls = []
 
 
-    storage.ref().listAll().then((res) => {
-            let listOfUrls = []
-            res.items.forEach((itemRef) => {
-                
-                itemRef.getDownloadURL()
-                    .then((url) => {
-                
-                    listOfUrls.push(url)
-                    
+        storage.ref().listAll()
+            .then((res) => {
+
+                res.items.forEach((itemRef) => {
+                    itemRef.getDownloadURL()
+                        .then((url) => {
+                            listOfUrls.push(url)
+                            setUrls([...urls, ...listOfUrls])
+                            setInit(true)
+                        })
+
+
+
+                })
+
+
+
+
             })
-              });
-
-            
-            setUrls(listOfUrls)
-            setInit(true)
-            
-        });
-        
-
-
     }
 
-
-    
 
     return (
         <div>
             portfolio
             <div>
-                       
-            {console.log()}
+
+            {console.log(urls)}
 
             {init ? urls.map((url) => <img key={url} src={url} className={style.photo} />) : <Loader />}
-            
-            
+
+
             </div>
 
         </div>
