@@ -46,12 +46,14 @@ const Portfolio = () => {
 
     return (
         <div>
-            portfolio
-            <div>
+            
+            <div className={style.container}>
 
-            {console.log(urls)}
-
-            {init ? urls.map((url) => <img key={url} src={url} className={style.photo} />) : <Loader />}
+            
+            
+            {init ? urls.map((url) => <div key={url} className={style.scale}><img  src={url} className={style.scale} /></div>) : <Loader />}
+            
+                       
 
 
             </div>

@@ -1,38 +1,32 @@
-import React, {useContext, useEffect}  from 'react'
-import {useCollectionData} from 'react-firebase-hooks/firestore'
+import React, { useContext, useEffect } from 'react'
+import { useCollectionData } from 'react-firebase-hooks/firestore'
 import { Context } from '../../index'
 import Loader from './../../Loader/Loader'
+import {InfoRender} from './InfoRender'
+import {ContactMeForm} from './ContactMeForm'
+import style from './Contacts.module.css'
+
+
+
 
 const Contacts = () => {
 
-    const {firestore} = useContext(Context)
+    
+    const { firestore } = useContext(Context)
     const [info, loading] = useCollectionData(
         firestore.collection("MyInfo"))
 
     if (loading) {
         return <Loader />
     }
-    
-    const infoRender = () => {
-        const instagram = info[0]['instagram']
-        const email = info[0]['email']
-        const telegram = info[0]['telegram']
 
-        return (
-            <div>
-                <div>{instagram}</div>
-                <div>{email}</div>
-                <div>{telegram}</div>
-            </div>
-        )
-    }
-    
 
 
     return (
-        <div>
-            contacts
-            {infoRender()}
+        <div className={style.container}>
+        <div className={style.left_container}><InfoRender info={info} /></div>
+        <div className={style.right_container}><ContactMeForm /></div>
+            
         </div>
     )
 }

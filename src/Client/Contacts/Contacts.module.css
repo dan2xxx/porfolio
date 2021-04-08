@@ -1,0 +1,70 @@
+.container {
+    font-family: 'Exo 2';font-size: 16px;
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    
+
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "left right";
+    
+}
+
+.left_container {
+    
+    grid-area: left;
+    text-align: left;
+    
+    
+}
+
+.right_container {
+    width: 100%;
+    grid-area: right;
+    text-align: left;
+
+}
+
+p {
+    color: #4f4f4f;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: #4f4f4f;
+    text-decoration: none;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+a:hover {
+    color: black;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.email {
+
+}
+
+.message {
+    margin-top: 10px;
+}
+
+.button {
+    margin-top: 10px;
+}
+
+.status {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: normal;
+    color: green;
+}
