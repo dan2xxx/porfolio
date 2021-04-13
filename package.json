@@ -1,5 +1,5 @@
 {
-  "homepage": "https://dan2xxx.github.io/porfolio/",
+  "homepage": "https://brstudio.netlify.app/",
   "name": "portfolioweb",
   "version": "0.1.0",
   "private": true,
@@ -15,7 +15,8 @@
     "react-hook-form": "^7.0.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.1"
+    "web-vitals": "^1.1.1", 
+    "react-firebase-hooks": "^3.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
