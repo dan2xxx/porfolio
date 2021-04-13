@@ -61,7 +61,7 @@ const AddPhoto = () => {
                     onChange={onPhotoSelector}
                 />
                 <label htmlFor="contained-button-file">
-                    <Button variant="contained" color="primary" component="span">
+                    <Button style={{marginTop: "30px"}} variant="contained" color="primary" component="span">
                         Upload
         </Button>
                 </label>

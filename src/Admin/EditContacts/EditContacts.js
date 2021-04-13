@@ -11,8 +11,12 @@ const EditContacts = () => {
     const { firestore } = useContext(Context)
     const [info, loading] = useCollectionData(firestore.collection("MyInfo"))
     const [contacts, setContacts] = useState('')
-    const [messages, messagesLoading] = useCollectionData(firestore.collection("Messages"))
+    const [messages, messagesLoading] = useCollectionData(firestore.collection("Messages"),{
+        snapshotListenOptions: { includeMetadataChanges: true },
+      })
     
+    console.log(messages)
+
     useEffect(() => {
         if (info) {
             setContacts({
@@ -64,19 +68,26 @@ const EditContacts = () => {
         if (messagesLoading) {
             return <Loader />
         } else {
-           return messages.map((item, index) => <div key={index} className={style.message}>
+            return messages.map((item, index) => <div key={index} className={style.message}>
                <h3>{item.mail}</h3>
                <p>{item.text}</p>
+               <Button className={style.button} onClick={() => deleteMessage(item.id)} variant="contained" color="primary">Delete</Button>
            </div>)
         
         
     }
 }
 
-    
+    const deleteMessage = (id) => {
+        firestore.collection("Messages").doc(id).delete().then(() => {
+            console.log("Document successfully deleted!");
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
+    }
 
     
-    console.log('render')
+    
 
     return (
         <div className={style.container}>
@@ -88,11 +99,15 @@ const EditContacts = () => {
                 <TextField onBlur={(e) => updateContacts(e, 'telegram')} id="telegram" label="Telegram" defaultValue={info[0]['telegram']} />
                 <TextField onBlur={(e) => updateContacts(e, 'instagram')} id="instagram" label="Instagram" defaultValue={info[0]['instagram']} />
             </form>
-            <Button className={style.button} onClick={uploadData} variant="contained" color="primary">Update</Button>
+
+            <div className={style.buttonContainer}><Button className={style.button} onClick={uploadData} variant="contained" color="primary">Update</Button></div>
+            
 
             <div className={style.messagesContainer}>
             {makeListOfMessage()}
             </div>
+            
+            
         </div>
     )
 }

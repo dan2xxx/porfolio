@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom'
 import styles from './Navbar.module.css'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { ThemeProvider } from '@material-ui/styles'
-
+import logo from './../images/logo3.png'
 
 const darkTheme = createMuiTheme({
   palette: {
@@ -39,10 +39,10 @@ export default function Navbar(props) {
     <ThemeProvider theme={darkTheme}>
     <div className={classes.root}>
     
-      <AppBar position="static">
+      <AppBar position="static" color='default'>
         <Toolbar>
-        <NavLink className={styles.menuLinks} to='/portfolio'><Button color="inherit">Portfolio</Button></NavLink>
-        <NavLink className={styles.menuLinks} to='/contacts'><Button color="inherit">Contacts</Button></NavLink>
+        <NavLink className={styles.menuLinks} to='/portfolio'><Button color="default">Portfolio</Button></NavLink>
+        <NavLink className={styles.menuLinks} to='/contacts'><Button color="default">Contacts</Button></NavLink>
         {props.isAdmin
         ? <div className={styles.adminPanel}>
         <NavLink className={styles.menuLinks} to='/add'><Button color="inherit">Add Photo</Button></NavLink>
@@ -55,7 +55,7 @@ export default function Navbar(props) {
 
 
           <Typography variant="h6" className={classes.title}>
-            The Retoucher 
+            <img className={styles.logo} src={logo}></img>
           </Typography>
           <NavLink className={styles.menuLinks} to='/login'><Button color="inherit">{props.userEmail ? props.userEmail : 'Login'}</Button></NavLink>
           

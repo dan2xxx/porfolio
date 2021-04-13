@@ -13,7 +13,8 @@ export const ContactMeForm = (props) => {
     const { firestore } = useContext(Context)
     const [state, setState] = useState({
         mail: '',
-        text: ''
+        text: '',
+        
     })
     const [status, setStatus] = useState('')
 
@@ -28,12 +29,15 @@ export const ContactMeForm = (props) => {
 
     const sendMessage = () => {
 
-        firestore.collection("Messages").doc(generateID()).set(state)
+        const id = generateID()
+
+        firestore.collection("Messages").doc(id).set({...state, id: id})
         .then(() => {
             setStatus('Sent')
             setState({
                 mail: '',
                 text: ''
+                
             })
         })
         .catch((error) => {
