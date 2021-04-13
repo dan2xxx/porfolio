@@ -41,8 +41,8 @@ export default function Navbar(props) {
     
       <AppBar position="static" color='default'>
         <Toolbar>
-        <NavLink className={styles.menuLinks} to='/portfolio'><Button color="default">Portfolio</Button></NavLink>
-        <NavLink className={styles.menuLinks} to='/contacts'><Button color="default">Contacts</Button></NavLink>
+        <NavLink className={styles.menuLinks} to='/portfolio'><Button color="inherit">Portfolio</Button></NavLink>
+        <NavLink className={styles.menuLinks} to='/contacts'><Button color="inherit">Contacts</Button></NavLink>
         {props.isAdmin
         ? <div className={styles.adminPanel}>
         <NavLink className={styles.menuLinks} to='/add'><Button color="inherit">Add Photo</Button></NavLink>
