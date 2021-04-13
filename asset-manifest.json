@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/porfolio/static/css/main.bcfa84e3.chunk.css",
-    "main.js": "/porfolio/static/js/main.cfc412ec.chunk.js",
-    "main.js.map": "/porfolio/static/js/main.cfc412ec.chunk.js.map",
-    "runtime-main.js": "/porfolio/static/js/runtime-main.2378a989.js",
-    "runtime-main.js.map": "/porfolio/static/js/runtime-main.2378a989.js.map",
-    "static/js/2.c758953b.chunk.js": "/porfolio/static/js/2.c758953b.chunk.js",
-    "static/js/2.c758953b.chunk.js.map": "/porfolio/static/js/2.c758953b.chunk.js.map",
-    "static/js/3.4b1cf926.chunk.js": "/porfolio/static/js/3.4b1cf926.chunk.js",
-    "static/js/3.4b1cf926.chunk.js.map": "/porfolio/static/js/3.4b1cf926.chunk.js.map",
-    "index.html": "/porfolio/index.html",
-    "static/css/main.bcfa84e3.chunk.css.map": "/porfolio/static/css/main.bcfa84e3.chunk.css.map",
-    "static/js/2.c758953b.chunk.js.LICENSE.txt": "/porfolio/static/js/2.c758953b.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.bcfa84e3.chunk.css",
+    "main.js": "/static/js/main.cfc412ec.chunk.js",
+    "main.js.map": "/static/js/main.cfc412ec.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ffa63661.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ffa63661.js.map",
+    "static/js/2.357a0490.chunk.js": "/static/js/2.357a0490.chunk.js",
+    "static/js/2.357a0490.chunk.js.map": "/static/js/2.357a0490.chunk.js.map",
+    "static/js/3.4b1cf926.chunk.js": "/static/js/3.4b1cf926.chunk.js",
+    "static/js/3.4b1cf926.chunk.js.map": "/static/js/3.4b1cf926.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.bcfa84e3.chunk.css.map": "/static/css/main.bcfa84e3.chunk.css.map",
+    "static/js/2.357a0490.chunk.js.LICENSE.txt": "/static/js/2.357a0490.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2378a989.js",
-    "static/js/2.c758953b.chunk.js",
+    "static/js/runtime-main.ffa63661.js",
+    "static/js/2.357a0490.chunk.js",
     "static/css/main.bcfa84e3.chunk.css",
     "static/js/main.cfc412ec.chunk.js"
   ]
